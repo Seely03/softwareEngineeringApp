@@ -1,0 +1,40 @@
+/* app/static/styles.css */
+
+/* Customize the navbar brand */
+.navbar-brand {
+    font-weight: bold;
+}
+
+/* Customize form labels */
+.form-label {
+    font-weight: bold;
+}
+
+/* Style flash messages */
+.alert {
+    margin-top: 15px;
+}
+
+/* Customize buttons */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+/* Card styles */
+.card-deck .card {
+    min-width: 250px;
+}
+
+/* Adjust card spacing */
+.card-deck .card {
+    margin-bottom: 15px;
+}
+
+/* Centered content for error pages */
+.text-center {
+    margin-top: 50px;
+}
+
+/* Additional custom styles */
+/* You can add more styles here to further customize your app */

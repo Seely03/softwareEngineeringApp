@@ -1,0 +1,33 @@
+<!-- app/templates/navbar.html -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{{ url_for('home') }}">Helpdesk App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            {% if current_user.is_authenticated %}
+                {% if current_user.role == 'admin' %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('create_user') }}"><i class="fas fa-user-plus"></i> Create User</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('create_project') }}"><i class="fas fa-plus"></i> Create Project</a>
+                    </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-primary mr-2" href="{{ url_for('login_as', username='Admin') }}">Login as Admin</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-outline-secondary" href="{{ url_for('login_as', username='test') }}">Login as User</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>
